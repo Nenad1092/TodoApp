@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreloApp", "TreloApp\TreloApp.csproj", "{AA2F2112-8D35-4348-888B-039D667E1779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{83575D40-B902-432E-B54B-7640267C29F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA2F2112-8D35-4348-888B-039D667E1779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2F2112-8D35-4348-888B-039D667E1779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2F2112-8D35-4348-888B-039D667E1779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2F2112-8D35-4348-888B-039D667E1779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83575D40-B902-432E-B54B-7640267C29F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83575D40-B902-432E-B54B-7640267C29F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83575D40-B902-432E-B54B-7640267C29F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83575D40-B902-432E-B54B-7640267C29F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEC9BBC6-48B9-4C9C-A21A-76D47E068BD2}
+	EndGlobalSection
+EndGlobal

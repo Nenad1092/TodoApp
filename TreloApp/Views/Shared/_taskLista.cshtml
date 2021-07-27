@@ -1,0 +1,35 @@
+﻿@using Repository.Models
+@model Item
+
+
+@foreach (var task in Model.Tasks.OrderBy(x=> x.IsDoneTask == true))
+{
+    <div class="task-class">
+        <div class="task-name">
+            @if (task.IsDoneTask == true)
+            {
+                @Html.Label("Task", task.TaskName, new { @class = "checkIn done-sumbItem-background" })
+            }
+
+            else
+            {
+                @Html.Label("Task", task.TaskName, new { @class = "dontShow" })
+            }
+        </div>      
+        <div class="task-done">
+            @Html.ActionLink(" Done ", "Done", "Task",
+            new { TaskId = task.Id }, new { @class = "ui-btn" })
+        </div>
+        <div class="task-edit">
+            @Html.ActionLink(" Edit ", "EditTask", "Task",
+            new { TaskId = task.Id }, new { @class = "ui-btn" })
+        </div>
+        <div class="task-delete">
+            @Html.ActionLink(" x ", "DeleteTask", "Task",
+            new { TaskId = task.Id }, new { @class = "ui-btn" })
+        </div>
+    </div>
+ }
+
+
+

@@ -1,0 +1,12 @@
+﻿@using Repository.Models
+@model Category
+
+
+@using (Html.BeginForm("EditCategory", "Home"))
+{
+    @Html.Hidden("CategoryId")
+    @Html.Label("CategoryName")
+    @Html.Editor("CategoryName")
+
+    <input type="submit" value="Edit Category" class="btn btn-default" />
+}

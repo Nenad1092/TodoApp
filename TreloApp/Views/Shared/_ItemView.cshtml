@@ -1,0 +1,74 @@
+﻿@using Repository.Models
+@model Category
+
+@foreach (var item in Model.Items.OrderBy(x => x.IsDone == true))
+{
+<li class="one-item">
+    <div class="percent">
+        @{
+            string text = "% of SubItem are Finished";
+            int percentDone = 0;
+            if (item.Tasks.Count != 0)
+            {
+                percentDone = item.Tasks.Where(t => t.IsDoneTask == true).Count() * 100 / item.Tasks.Count();
+
+            }
+        }
+        
+    </div>
+        
+    <div class="main-conteiner-item ">
+
+        <div>
+            @if (item.IsDone == true || percentDone == 100)
+            {
+                @Html.Label("Item", item.ItemName, new { @class = "checkIn done-item-background" })
+            }
+
+            else
+            {
+                @Html.Label("Item", item.ItemName, new { @class = "dontShow" })
+            }
+        </div>
+
+        <div class="item-button-done">
+            @Html.ActionLink(" Done ", "Done", "Item",
+                new { ItemId = item.Id }, new { @class = "ui-btn" })
+        </div>
+
+        <div class="item-button-edit">
+            @Html.ActionLink(" Edit ", "EditItem", "Item",
+                new { ItemId = item.Id }, new { @class = "ui-btn" })
+        </div class="item-button-done">
+
+        
+            @if (percentDone == 100 || percentDone < 1)
+            {
+                <div class="item-button-delete">
+                    @Html.ActionLink(" x ", "DeleteItem", "Item",
+                        new { ItemId = item.Id }, new { @class = "ui-btn" })
+                </div>
+            }
+        
+        <div class="item-button-subItem">
+
+            @Html.ActionLink(" Add ", "AddTask", "Task",
+                 new { ItemId = item.Id }, new { @class = "ui-btn" })
+        </div>
+
+    </div>
+
+    <div class="item-percent">
+        @if (percentDone > 1)
+        {
+            @percentDone @text
+        }
+    </div>
+    
+        
+    
+
+    @Html.Partial("_taskLista", item)
+
+</li>
+}

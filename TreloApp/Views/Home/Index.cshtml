@@ -1,0 +1,56 @@
+﻿@using Repository.Models
+@model IEnumerable<Category>
+<div class="main-contener">
+
+
+
+    <div class="list-contener">
+        <ul class="one-ul">
+            @foreach (var category in Model)
+            {
+                <div class="category">
+                    <li class="one-category">
+                        <div class="category-buttons">
+                            @category.CategortyName
+
+                            <div class="edit-category-button">
+                                @Html.ActionLink(" Edit ", // <-- Link text
+                                          "EditCategory", "Home", // <-- Action Method Name
+                                          new { CategoryId = category.Id }, // <-- Route value
+                                          new { @class = "ui-btn" })
+                            </div>
+                            <div class="delete-category-button">
+                                @Html.ActionLink(" x ", // <-- Link text
+                                             "DeleteCategory",// <-- Action Method Name
+                                             new { CategoryId = category.Id }, // <-- Route value
+                                             new { @class = "ui-btn" })
+                            </div>
+
+                        </div>                                             
+                        
+
+                        @Html.Partial("_ItemView", category)
+
+                        @using (Html.BeginForm("AddItem", "Item"))
+                        {
+                            <div class="full-item">
+                                <div clas"for-plus">
+                                    @Html.Label("+")
+                                </div>
+                                <div clas"for-item-add">
+                                    @Html.Label("Add Item")
+                                </div>
+                            </div>
+                            <div class="item-input">
+                                @Html.Hidden("CategoryId", category.Id)
+                                @Html.Editor("ADD")
+                                <input type="submit" value="Add" class="   btn btn-default" />
+                            </div>
+                        }
+                    </li>
+                </div>
+            }
+        </ul>
+    </div>
+    @Html.Partial("_AddCategory")
+</div>

@@ -1,0 +1,13 @@
+﻿@using Repository.Models
+@model Task
+
+
+@using (Html.BeginForm("EditTask", "Task"))
+{
+    @Html.Hidden("categoryId")
+    @Html.Hidden("itemId")
+    @Html.Hidden("taskId")
+    @Html.Label("Edit Task")
+    @Html.Editor("Edit")
+    <input type="submit" value="Edit Task" class="btn btn-default" />
+}

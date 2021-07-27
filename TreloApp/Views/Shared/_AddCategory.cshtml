@@ -1,0 +1,24 @@
+﻿@using Repository.Models
+@model IEnumerable<Category>
+
+@using (Html.BeginForm("AddCategory", "Home"))
+{
+<div class="Add">
+    <div class="text-add">
+        <div clas"for-plus">
+            @Html.Label("+")
+        </div>
+        <div class="for-addcategory">
+            @Html.Label(" Add Category")
+        </div>
+    </div>
+    <div class="input-add">
+        <div class="for-categoryname">
+            @Html.TextBox("CategoryName")
+        </div>
+        <div class="for-btn">
+            <input type="submit" value="Add" class="btn btn-default" />
+        </div>        
+    </div>  
+</div>
+}
